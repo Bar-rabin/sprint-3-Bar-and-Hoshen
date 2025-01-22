@@ -10,10 +10,8 @@ export function MailList({ mails, onRemoveMail }) {
             {mails.map(mail =>
                 <li key={mail.id}>
                     <MailPreview mail={mail} onRemoveMail={onRemoveMail} />
-
-                    {/* <button onClick={() => onRemoveMail(mail.id)}>{<img src='/icons/asset 30.png' />}</button> */}
-
-                </li>)}
+                </li>
+            )}
 
         </ul>
     )

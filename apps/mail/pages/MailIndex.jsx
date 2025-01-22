@@ -2,14 +2,18 @@ const { useEffect, useState } = React
 const { Link, useSearchParams } = ReactRouterDOM
 
 
+import { MailHeader } from '../cmps/MailHeader.jsx'
 import { utilService } from '../../../services/util.service.js'
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
+import { MailCompose } from './MailCompose.jsx'
 
 export function MailIndex() {
 
+    const { Fragment } = React
     const [mails, setMails] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
+    const [isOpen, setIsOpen] = useState(false)
 
 
     useEffect(() => {
@@ -35,15 +39,27 @@ export function MailIndex() {
                 console.log('Problems removing mail:', err)
             })
     }
-    console.log(mails)
+
+    function onToggleModal() {
+        setIsOpen(isOpen => !isOpen)
+    }
 
     if (!mails) return <h1>Loading...</h1>
     return (
-        <section className='mail-index'>
-            <MailList
-                mails={mails}
-                onRemoveMail={onRemoveMail} />
-        </section>
+        <Fragment>
+            <button onClick={onToggleModal}>Compose</button>
+            <section className='mail-index'>
+                <MailHeader />
+                <MailList
+                    mails={mails}
+                    onRemoveMail={onRemoveMail}>
+                </MailList>
+                <MailCompose
+                    isOpen={isOpen} onClose={() => setIsOpen(false)}>
+
+                </MailCompose>
+            </section>
+        </Fragment>
     )
 }
 
