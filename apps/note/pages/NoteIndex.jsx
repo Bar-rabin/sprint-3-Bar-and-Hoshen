@@ -4,7 +4,7 @@ const { useState, useEffect } = React
 
 export function NoteIndex() {
     //states
-    const [ notes, setNotes ] = useState([])
+    const [notes, setNotes] = useState([])
     // const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
     //funcs
     useEffect(() => {
@@ -14,10 +14,23 @@ export function NoteIndex() {
                 console.log('problem getting notes')
             })
     }, [])
-
+function onRemoveNote(noteId) {
+        noteService.remove(noteId)
+            .then(() => {
+                setNotes(notes => notes.filter(note => note.id !== noteId))
+                showSuccessMsg(`Car removed successfully!`)
+            })
+            .catch(err => {
+                console.log('Problems removing note:', err)
+                showErrorMsg(`Problems removing note (${noteId})`)
+            })
+    }
     // function onSetFilterBy(newFilter) { 
     //     setFilterBy(prevFilter => ({ ...prevFilter, ...newFilter }))
     // }
 
-    return <div><NoteList notes={notes} /></div>
+    return <div>
+        <NoteList notes={notes} onRemoveNote={onRemoveNote}/>
+        
+    </div>
 }

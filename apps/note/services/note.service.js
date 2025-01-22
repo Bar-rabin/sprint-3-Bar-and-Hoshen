@@ -88,7 +88,23 @@ function _createNotes() {
             _createNote('Hello there'),
             _createNote('Remember to Insert text'),
             _createNote('I like react'),
-            _createNote('Hoshen and Bar are awsome')
+            _createNote('Hoshen and Bar are awsome'),
+            _createNote('Hello there'),
+            _createNote('Hello there'),
+            _createNote('Remember to Insert text'),
+            _createNote('I like react'),
+            _createNote('Hoshen and Bar are awsome'),
+            _createNote('Hello there'),
+            _createNote('Remember to Insert text'),
+            _createNote('I like react'),
+            _createNote('Hoshen and Bar are awsome'),
+            _createNote('Remember to Insert text'),
+            _createNote('I like react'),
+            _createNote('Hoshen and Bar are awsome'),
+            _createNote('Hello there'),
+            _createNote('Remember to Insert text'),
+            _createNote('I like react'),
+            _createNote('Hoshen and Bar are awsome'),
         ]
         storageService.saveToStorage(NOTE_KEY, notes)
     }
