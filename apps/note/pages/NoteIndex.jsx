@@ -1,5 +1,6 @@
 import { NoteList } from "../cmps/NoteList.jsx"
 import { noteService } from "../services/note.service.js"
+import { NoteHeader } from "../cmps/NotesHeader.jsx"
 const { useState, useEffect } = React
 
 export function NoteIndex() {
@@ -30,6 +31,7 @@ function onRemoveNote(noteId) {
     // }
 
     return <div>
+        <NoteHeader/>
         <NoteList notes={notes} onRemoveNote={onRemoveNote}/>
         
     </div>

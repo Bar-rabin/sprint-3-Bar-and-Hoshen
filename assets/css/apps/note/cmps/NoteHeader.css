@@ -1,0 +1,15 @@
+.notes-header .logo {
+    width: 50px
+}
+
+.ham {
+    width: 30px;
+    align-self: center;
+    margin: 15px;
+
+}
+
+.main-logo h3 {
+    align-self: center;
+    font-family: sans-serif;
+}
