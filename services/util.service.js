@@ -6,9 +6,9 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    getTruthyValues
 }
 
-console.log('jjjj')
 
 function makeId(length = 6) {
     var txt = ''
@@ -61,4 +61,15 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+function getTruthyValues(obj) {
+    const newObj = {}
+    for (const key in obj) {
+        const value = obj[key]
+        if (value) {
+            newObj[key] = value
+        }
+    }
+    return newObj
 }
