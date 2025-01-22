@@ -24,12 +24,25 @@ export function MailIndex() {
                 console.log('Problems getting mails:', err)
             })
     }
+
+    function onRemoveMail(mailId) {
+        mailService.remove(mailId)
+            .then(() => {
+                setMails(mails => mails.filter(mail => mail.id !== mailId))
+
+            })
+            .catch(err => {
+                console.log('Problems removing mail:', err)
+            })
+    }
     console.log(mails)
 
     if (!mails) return <h1>Loading...</h1>
     return (
         <section className='mail-index'>
-            <MailList mails={mails} />
+            <MailList
+                mails={mails}
+                onRemoveMail={onRemoveMail} />
         </section>
     )
 }

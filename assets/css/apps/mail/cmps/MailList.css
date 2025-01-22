@@ -1,26 +1,6 @@
  /* mail list */
 
-.mail-preview{
-   cursor: pointer;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    box-shadow: inset 0 -1px 0 0 rgba(100, 121, 143, .12);
-    gap: 50px;
-    justify-content: space-between;   
-    padding-left: 10px;
-    padding-right: 10px;
-    /* display: flex;
-    position: relative; */
-}
+ .mail-list {
+    min-width: 100%;
+ }
 
-.mail-preview:hover {
-    box-shadow: inset -1px 0 0 #dadce0,
-    inset 1px 0 0 #dadce0,
-    0 1px 2px 0 rgba(60, 64, 67, .3),
-    0 1px 3px 1px rgba(60, 64, 67, .15);
-    z-index: 2;
-}
-
-.read {
-    background-color: #f2f6fc;
-}
