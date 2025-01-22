@@ -31,7 +31,7 @@ export function MailDetails() {
 
     if (!mail) return <div>Loading...</div>
     return (
-        <section className='mail-details'>
+        <section className='mail-details text-align-center'>
             <h1>{mail.subject}</h1>
             <h3>{mail.body}</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga culpa laboriosam repellat at repudiandae unde a possimus delectus amet mollitia. Sunt, amet hic? Iste ullam modi obcaecati non eum provident!</p>
