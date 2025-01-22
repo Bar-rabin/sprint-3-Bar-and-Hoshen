@@ -1,0 +1,20 @@
+.mail-header .logo {
+    width: 80%;
+    
+}
+
+.mail-header .icon-header {
+    width: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.mail-header .main-logo{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+   
+}
+ 
