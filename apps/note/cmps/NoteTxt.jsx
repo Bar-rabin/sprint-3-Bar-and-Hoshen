@@ -57,10 +57,8 @@ export function NoteTxt() {
     const { info } = noteToEdit
     return (
         <section className="note-edit">
-            <h1>{noteToEdit.id ? 'Edit' : 'Add'} Note</h1>
             <form onSubmit={onSaveNote}>
-                <label htmlFor="txt">text</label>
-                <input value={info.txt} onChange={handleChange} type="text" name="txt" id="txt" />
+                <input className="text-box" value={info.txt} onChange={handleChange} type="text" name="txt" id="txt" />
                 <button>Save</button>
             </form>
         </section>
