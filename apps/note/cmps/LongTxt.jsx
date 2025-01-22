@@ -7,7 +7,7 @@ export function LongTxt({ txt, length = 50 }) {
         setIsShowLong(isShowLong => !isShowLong)
     }
 
-    const isLongText = txt.length > length
+    const isLongText = txt > length
     const textToShow = (isShowLong || !isLongText) ? txt : (txt.substring(0, length)) + '...'
     return (
         <section className="long-txt">

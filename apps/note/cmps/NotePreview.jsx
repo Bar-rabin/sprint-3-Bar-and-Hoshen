@@ -5,7 +5,7 @@ export function NotePreview({ note }) {
     
     function onEditNote() {
         // ev.preventDefault()
-        navigate(`/note/${note.id}`)
+        navigate(`/note/edit/${note.id}`)
     }
 const {info} = note
     return (

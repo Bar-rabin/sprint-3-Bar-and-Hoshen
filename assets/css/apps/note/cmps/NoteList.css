@@ -26,3 +26,18 @@
     0 1px 2px 0 rgba(60, 64, 67, .3),
     0 1px 3px 1px rgba(60, 64, 67, .15);
 }
+
+.add-logo{
+    width:70px;
+    background-color:#ffbc00 ;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    transition: width, 200ms;
+}
+.add-logo:hover{
+    cursor: pointer;
+    background-color:#d1a11c ;
+    width: 90px;
+}

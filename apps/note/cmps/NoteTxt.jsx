@@ -24,8 +24,9 @@ export function NoteTxt() {
 
 
     function handleChange({ target }) {
-        const field = target.name
-        let value = target.value
+        console.log(target)
+       
+        let {value} = target
 
         switch (target.type) {
             case 'number':
@@ -37,7 +38,12 @@ export function NoteTxt() {
                 value = target.checked
                 break
         }
-        setNoteToEdit(prevNote => ({ ...prevNote, [field]: value }))
+        console.log(value)
+        setNoteToEdit(prevNote => ({
+            ...prevNote,
+            info: {...prevNote.info, [target.name]: value }
+            }))
+        console.log(noteToEdit)
     }
 
     function onSaveNote(ev) {
