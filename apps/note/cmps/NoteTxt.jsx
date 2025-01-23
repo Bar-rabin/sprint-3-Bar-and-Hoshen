@@ -14,32 +14,36 @@ export function NoteTxt() {
     })
 
     useEffect(() => {
+        console.log(noteId)
         if (noteId) loadNote()
+            console.log(noteToEdit)
     }, [])
 
-
+//load and set
     function loadNote() {
         noteService.get(noteId)
             .then(setNoteToEdit)
+            
             .catch(err => {
                 console.log('Problem getting note', err)
                 navigate('/note')
             })
     }
 
-    function onSetNoteStyle(noteStyle) { //
+    function onSetNoteStyle(noteStyle) {
         setNoteStyle(prevNoteStyle => ({ ...prevNoteStyle, ...noteStyle }))
         setNoteToEdit(prevNote => ({
             ...prevNote,
-            style:{...noteStyle }
-            }))
-        
+            style: { ...noteStyle }
+        }))
+
     }
 
+    //edit
     function handleChange({ target }) {
         console.log(target)
-       
-        let {value} = target
+
+        let { value } = target
 
         switch (target.type) {
             case 'number':
@@ -54,14 +58,15 @@ export function NoteTxt() {
         console.log(noteStyle)
         setNoteToEdit(prevNote => ({
             ...prevNote,
-            
-            info: {...prevNote.info, [target.name]: value}
-            }))
+
+            info: { ...prevNote.info, [target.name]: value }
+        }))
         console.log(noteToEdit)
+
     }
 
-    
 
+// save
     function onSaveNote(ev) {
         ev.preventDefault()
         noteService.save(noteToEdit)
@@ -75,14 +80,15 @@ export function NoteTxt() {
             })
     }
 
-
-    const { info } = noteToEdit
+    //elements
+    console.log(noteToEdit)
+   const {info} = noteToEdit
     return (
         <section className="note-edit">
             <form onSubmit={onSaveNote}>
                 <input className="text-box" value={info.txt} onChange={handleChange} type="text" name="txt" id="txt" />
                 <div className="color-picker">
-                <ColorInput {...noteStyle} onSetNoteStyle={onSetNoteStyle}/>
+                    <ColorInput {...noteStyle} onSetNoteStyle={onSetNoteStyle} />
                 </div>
                 <button>Save</button>
             </form>
