@@ -1,12 +1,17 @@
 import { noteService } from "../services/note.service.js"
+import { ColorInput } from "./ColorInput.jsx"
 
 const { useNavigate, useParams } = ReactRouterDOM
 const { useState, useEffect } = React
+
 export function NoteTxt() {
 
     const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
     const { noteId } = useParams()
     const navigate = useNavigate()
+    const [noteStyle, setNoteStyle] = useState({
+        backgroundColor: 'white'
+    })
 
     useEffect(() => {
         if (noteId) loadNote()
@@ -22,6 +27,14 @@ export function NoteTxt() {
             })
     }
 
+    function onSetNoteStyle(noteStyle) { //
+        setNoteStyle(prevNoteStyle => ({ ...prevNoteStyle, ...noteStyle }))
+        setNoteToEdit(prevNote => ({
+            ...prevNote,
+            style:{...noteStyle }
+            }))
+        
+    }
 
     function handleChange({ target }) {
         console.log(target)
@@ -38,13 +51,16 @@ export function NoteTxt() {
                 value = target.checked
                 break
         }
-        console.log(value)
+        console.log(noteStyle)
         setNoteToEdit(prevNote => ({
             ...prevNote,
-            info: {...prevNote.info, [target.name]: value }
+            
+            info: {...prevNote.info, [target.name]: value}
             }))
         console.log(noteToEdit)
     }
+
+    
 
     function onSaveNote(ev) {
         ev.preventDefault()
@@ -65,6 +81,9 @@ export function NoteTxt() {
         <section className="note-edit">
             <form onSubmit={onSaveNote}>
                 <input className="text-box" value={info.txt} onChange={handleChange} type="text" name="txt" id="txt" />
+                <div className="color-picker">
+                <ColorInput {...noteStyle} onSetNoteStyle={onSetNoteStyle}/>
+                </div>
                 <button>Save</button>
             </form>
         </section>

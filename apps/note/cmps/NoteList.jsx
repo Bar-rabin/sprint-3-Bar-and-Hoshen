@@ -15,10 +15,10 @@ export function NoteList({ notes, onRemoveNote }) {
     return (
         <ul className="flex spaced-between">
             {notes.map(note =>
-                < li key={note.id} className="clean-list flex  note" >
+                < li key={note.id} style={note.style} className="clean-list flex  note" >
                     <NotePreview note={note} />
                     <section>
-                        <button className="posd-button" onClick={() => onRemoveNote(note.id)}>x</button>
+                        <button className="posd-button" onClick={() => onRemoveNote(note.id)}>X</button>
                     </section>
                 </li>
             )

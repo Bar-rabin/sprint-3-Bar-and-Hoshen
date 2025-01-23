@@ -1,0 +1,51 @@
+.color-picker {
+    /* padding-block: 20px; */
+    height: 120px;
+    background-color: #ffffff;
+    color: white;
+    transition: .2s;
+}
+
+.color-picker > section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.color-picker h1 {
+    margin-inline-end: auto;
+}
+
+.color-picker {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.color-picker .active {
+    color: white;
+}
+
+
+.color-picker .items-container {
+    display: flex;
+    gap: 10px;
+}
+
+.color-picker .item {
+    border: rgb(163, 161, 161) 3px solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    min-height: 40px;
+    min-width: 40px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: .2s border-width;
+}
+
+.color-picker .chosen {
+    border-width: 6px;
+}
