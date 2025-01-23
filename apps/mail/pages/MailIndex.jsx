@@ -16,17 +16,16 @@ export function MailIndex() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [isOpen, setIsOpen] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
-    // const [filteredMails, setFilteredMails] = useState([]);
-
+    const [starColor, setStarColor] = useState('white')
 
 
     useEffect(() => {
         setSearchParams(utilService.getTruthyValues())
         loadMails()
-    }, [filterBy])
+    }, [filterBy, starColor])
 
     function loadMails() {
-        mailService.query()
+        mailService.query(filterBy)
             .then(mails => {
                 setMails(mails)
                 setFilteredMails(mails)
@@ -48,7 +47,8 @@ export function MailIndex() {
     }
 
     function onSetFilter(filterByToEdit) {
-        setFilterBy(prevFilter => ({ ...prevFilter, ...filterByToEdit }))
+        setFilterBy({ from: filterByToEdit })
+
     }
 
     function filterMailsFromMomo() {
@@ -60,6 +60,11 @@ export function MailIndex() {
         setIsOpen(isOpen => !isOpen)
     }
 
+
+    function onToggelStar() {
+        setStarColor('yellow')
+    }
+
     if (!mails) return <h1>Loading...</h1>
     return (
         <Fragment>
@@ -69,7 +74,9 @@ export function MailIndex() {
 
                 <MailList
                     mails={mails}
-                    onRemoveMail={onRemoveMail}>
+                    onRemoveMail={onRemoveMail}
+                    onToggelStar={onToggelStar}
+                    starColor={starColor}>
                 </MailList>
                 {/* <MailInbox
                     mails={mails}

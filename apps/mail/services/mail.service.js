@@ -18,17 +18,12 @@ export const mailService = {
     getEmptyMailToSend
 }
 
-function query(filterBy = {}) {
+function query(filterBy) {
+    console.log(filterBy)
     return async.query(MAIL_KEY)
         .then(mails => {
-            console.log(filterBy)
-            console.log(mails)
-            if (filterBy.from === 'momo@momo.com') {
-                mails = mails.filter(mail => mail.from === filterBy.from)
-            }
 
-            mails = mails.filter(mail => mail.to === 'momo@momo.com')
-
+            mails = mails.filter(mail => mail.from === filterBy.from)
             return mails
         })
 }
@@ -68,11 +63,11 @@ function getEmptyMail(subject = '', body = '', isRead = false) {
 function getEmptyMailToSend(subject = '', body = '', isRead = false) {
     return {
         id: '',
-        createdAt: new Date(Date.now()),
+        createdAt: new Date(Date.now()).toLocaleDateString(),
         subject,
         body,
         isRead,
-        sentAt: new Date(Date.now()),
+        sentAt: new Date(Date.now()).toLocaleDateString(),
         removedAt: null,
         from: 'momo@momo.com',
         to: 'user@appsus.com'
