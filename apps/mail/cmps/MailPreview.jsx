@@ -16,7 +16,7 @@ export function MailPreview({ mail, onRemoveMail }) {
         navigate(`/mail/${mail.id}`)
     }
 
-
+    console.log(mail.createdAt)
     return (
         <article className={'mail-preview flex align-center ' + getMailClass()}>
             <div className='mail align-center' onClick={onOpenMail}>
