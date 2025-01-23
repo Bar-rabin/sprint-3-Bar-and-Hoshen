@@ -17,7 +17,7 @@ export function NoteList({ notes, onRemoveNote }) {
     
 
     return (
-        <ul className="">
+        <ul className="note-ul">
             {notes.map(note =>
             <div className="note-cont" style={note.style} onClick={()=> onEditNote(note.id)}>
                     <section>

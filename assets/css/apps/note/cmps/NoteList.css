@@ -1,5 +1,5 @@
  /* note list */
- ul {
+ .note-ul {
     column-count: 3;
      column-gap: 5px;
      max-width: 80%;
