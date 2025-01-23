@@ -10,8 +10,9 @@ export function NoteList({ notes, onRemoveNote }) {
         navigate(`/note/edit`)
     }
 
-    function onEditNote(id) {
-        // ev.preventDefault()
+    function onEditNote(ev,id) {
+        console.log('hey')
+        ev.preventDefault()
         navigate(`/note/edit/${id}`)
     }
     
@@ -19,12 +20,12 @@ export function NoteList({ notes, onRemoveNote }) {
     return (
         <ul className="note-ul">
             {notes.map(note =>
-            <div className="note-cont" style={note.style} onClick={()=> onEditNote(note.id)}>
+            <div className="note-cont" style={note.style} >
                     <section>
                         <button className="posd-button" onClick={() => onRemoveNote(note.id)}>X</button>
                     </section>
 
-                < li key={note.id}  className="clean-list flex  note" >
+                < li key={note.id}  className="clean-list flex  note" onClick={(ev)=> onEditNote(ev, note.id)}>
                     <NotePreview note={note} />
                 </li>
             </div>

@@ -10,7 +10,7 @@
  }
 
  .note-cont {
-     /* max-width: 80%; */
+     min-height: 200px;
      border: 1px solid #bdc1c6;
      border-radius: 5px;
      margin: 10px;

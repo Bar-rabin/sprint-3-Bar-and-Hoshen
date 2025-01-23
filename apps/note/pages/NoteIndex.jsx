@@ -15,7 +15,7 @@ export function NoteIndex() {
                 console.log('problem getting notes')
             })
     }, [])
-function onRemoveNote(noteId) {
+    function onRemoveNote(noteId) {
         noteService.remove(noteId)
             .then(() => {
                 setNotes(notes => notes.filter(note => note.id !== noteId))
@@ -31,8 +31,8 @@ function onRemoveNote(noteId) {
     // }
 
     return <div>
-        <NoteHeader/>
+        <NoteHeader />
         <NoteList notes={notes} onRemoveNote={onRemoveNote}/>
-        
+
     </div>
 }

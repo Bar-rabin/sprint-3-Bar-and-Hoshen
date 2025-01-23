@@ -14,9 +14,9 @@ export function NoteTxt() {
     })
 
     useEffect(() => {
-        console.log(noteId)
+        
         if (noteId) loadNote()
-            console.log(noteToEdit)
+            
     }, [])
 
 //load and set
@@ -81,7 +81,6 @@ export function NoteTxt() {
     }
 
     //elements
-    console.log(noteToEdit)
    const {info} = noteToEdit
     return (
         <section className="note-edit">
