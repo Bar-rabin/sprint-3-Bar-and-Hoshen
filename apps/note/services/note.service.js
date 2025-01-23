@@ -62,19 +62,42 @@ function getDefaultFilter() {
 
 
 //notes creation
-function getEmptyNote(txt, type) {
-    return {
-        id: '',
-        createdAt: 'now',
-        type,
-        isPinned: false,
-        style: {
-        backgroundColor: 'white'
-        },
-        info: {
-        txt
-        }
-    }
+function getEmptyNote(txt, type = 'text') {
+     switch (type) {
+        case 'text':
+            return {
+                id: '',
+                createdAt: 'now',
+                type,
+                isPinned: false,
+                style: {
+                backgroundColor: 'white'
+                },
+                info: {
+                txt
+                }
+            }
+            
+            break;
+            case 'video':
+                return {
+                    id: '',
+                    createdAt: 'now',
+                    type,
+                    isPinned: false,
+                    style: {
+                    backgroundColor: 'white'
+                    },
+                    info: {
+                    url: txt
+                    }
+                }
+                
+                break;
+        default:
+            break;
+     }
+    
 }
 
 function _createNotes() {
@@ -105,6 +128,7 @@ function _createNotes() {
             _createNote('Remember to Insert text'),
             _createNote('I like react'),
             _createNote('Hoshen and Bar are awsome'),
+            _createNote('https://www.youtube.com/embed/4dPRGfGmCmU', 'video')
         ]
         storageService.saveToStorage(NOTE_KEY, notes)
     }
