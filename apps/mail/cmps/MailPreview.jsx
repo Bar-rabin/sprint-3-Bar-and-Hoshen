@@ -18,10 +18,11 @@ export function MailPreview({ mail, onRemoveMail }) {
 
 
     return (
-        <article className={'mail-preview flex ' + getMailClass()}>
+        <article className={'mail-preview flex align-center ' + getMailClass()}>
             <div className='mail align-center' onClick={onOpenMail}>
                 <h2>{mail.subject}</h2>
-                <h4>{mail.body}</h4>
+                <p>{mail.body}</p>
+                {/* <p>{mail.from}</p> */}
             </div>
             <div onClick={() => onRemoveMail(mail.id)}>{<img className='icon' src='/icons/asset 30.png' />}</div>
 

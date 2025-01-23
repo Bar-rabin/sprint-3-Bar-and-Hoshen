@@ -7,6 +7,7 @@ import { utilService } from '../../../services/util.service.js'
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
 import { MailCompose } from './MailCompose.jsx'
+import { MailInbox } from './MailInbox.jsx'
 
 export function MailIndex() {
 
@@ -14,8 +15,10 @@ export function MailIndex() {
     const [mails, setMails] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
     const [isOpen, setIsOpen] = useState(false)
+    const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
 
 
+    console.log(filterBy)
     useEffect(() => {
         setSearchParams(utilService.getTruthyValues())
         loadMails()
@@ -40,6 +43,10 @@ export function MailIndex() {
             })
     }
 
+    // function onSetFilter(filterBy) {
+    //     setFilterBy(filterBy)
+    // }
+
     function onToggleModal() {
         setIsOpen(isOpen => !isOpen)
     }
@@ -47,13 +54,17 @@ export function MailIndex() {
     if (!mails) return <h1>Loading...</h1>
     return (
         <Fragment>
-            <button onClick={onToggleModal}>Compose</button>
             <section className='mail-index'>
-                <MailHeader />
+                <MailHeader onToggleModal={onToggleModal} />
+
                 <MailList
                     mails={mails}
                     onRemoveMail={onRemoveMail}>
                 </MailList>
+                <MailInbox
+                    mails={mails}
+                    onRemoveMail={onRemoveMail}>
+                </MailInbox>
                 <MailCompose
                     isOpen={isOpen} onClose={() => setIsOpen(false)}>
 

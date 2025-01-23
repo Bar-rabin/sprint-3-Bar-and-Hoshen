@@ -14,21 +14,26 @@ export const mailService = {
     save,
     getEmptyMail,
     getDefaultFilter,
-    getFilterFromSearchParams
+    getFilterFromSearchParams,
+    getEmptyMailToSend
 }
 
 function query(filterBy = {}) {
     return async.query(MAIL_KEY)
-    // .then(mails => {
-    //     if (filterBy.txt) {
-    //         const regExp = new RegExp(filterBy.txt, 'i')
-    //         mails = mails.filter(mail => regExp.test(mail.vendor))
-    //     }
-    //     if (filterBy.minSpeed) {
-    //         mails = mails.filter(mail => mail.speed >= filterBy.minSpeed)
-    //     }
-    // })
-    // return mails
+        .then(mails => {
+            console.log(filterBy)
+            console.log(mails)
+            if (filterBy.from) {
+
+
+                mails = mails.filter(mail => mail.from === filterBy.from)
+
+            }
+
+            mails = mails.filter(mail => mail.to === 'momo@momo.com')
+
+            return mails
+        })
 }
 
 function get(mailId) {
@@ -51,7 +56,22 @@ function save(mail) {
 function getEmptyMail(subject = '', body = '', isRead = false) {
     return {
         id: '',
-        createdAt: 'now',
+        createdAt: new Date(Date.now()),
+        subject,
+        body,
+        isRead,
+        sentAt: null,
+        removedAt: null,
+        from: 'user@appsus.com',
+        to: 'momo@momo.com'
+
+
+    }
+}
+function getEmptyMailToSend(subject = '', body = '', isRead = false) {
+    return {
+        id: '',
+        createdAt: new Date(Date.now()),
         subject,
         body,
         isRead,
@@ -59,11 +79,14 @@ function getEmptyMail(subject = '', body = '', isRead = false) {
         removedAt: null,
         from: 'momo@momo.com',
         to: 'user@appsus.com'
+
+
     }
 }
 
+
 function getDefaultFilter() {
-    return { txt: '', minSpeed: '' }
+    return { from: 'user@appsus.com' }
 }
 
 
@@ -73,9 +96,15 @@ function _createMails() {
     if (!mails || !mails.length) {
         mails = [
             _createMail('Miss you!', 'Would love to catch up sometimes', true),
-            _createMail('Miss you!', 'Would love to catch up sometimes'),
+            _createMail('Love you!', 'I love you so mach'),
+            _createMail('you!', 'Would love to catch up sometimes', true),
+            _createMail('Hi!', 'Would love to catch up sometimes'),
+            _createMail('You Want?', 'You want ice cream?'),
+            _createMail('Love you!', 'Would love to catch up sometimes'),
+            _createMail('Miss you!', 'I miss you', true),
             _createMail('Miss you!', 'Would love to catch up sometimes', true),
-            _createMail('Miss you!', 'Would love to catch up sometimes')
+
+
         ]
         storageService.saveToStorage(MAIL_KEY, mails)
     }
