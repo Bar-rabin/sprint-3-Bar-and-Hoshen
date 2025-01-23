@@ -7,10 +7,10 @@ export function NotePreview({ note }) {
     const { info, type } = note
     return (
         <article className="Note-preview"  >
-            {type === 'video'
-                ? <iframe height="100%" width="100%" src={info.url}></iframe>
-                : <LongTxt txt={info.txt} />
-            }
+            {type === 'video' && <iframe height="100%" width="100%" src={info.url}></iframe>}
+            {type === 'text' && <LongTxt txt={info.txt} />}
+            {type === 'image' &&  <img src={info.src}></img>}
+            
         </article>
     )
 }

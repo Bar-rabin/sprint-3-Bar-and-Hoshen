@@ -94,6 +94,21 @@ function getEmptyNote(txt, type = 'text') {
                 }
                 
                 break;
+            case 'image':
+                return {
+                    id: '',
+                    createdAt: 'now',
+                    type,
+                    isPinned: false,
+                    style: {
+                    backgroundColor: 'white'
+                    },
+                    info: {
+                    src: txt
+                    }
+                }
+                
+                break;
         default:
             break;
      }
@@ -128,7 +143,9 @@ function _createNotes() {
             _createNote('Remember to Insert text'),
             _createNote('I like react'),
             _createNote('Hoshen and Bar are awsome'),
-            _createNote('https://www.youtube.com/embed/4dPRGfGmCmU', 'video')
+            _createNote('https://www.youtube.com/embed/4dPRGfGmCmU', 'video'),
+            _createNote('note/imgs/DSC_0833.JPG', 'image')
+
         ]
         storageService.saveToStorage(NOTE_KEY, notes)
     }
