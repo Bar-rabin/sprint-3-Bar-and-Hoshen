@@ -1,5 +1,10 @@
+.notes-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
 .notes-header .logo {
-    width: 50px
+    width: 50px;
+    margin-top: 5px;
 }
 
 .ham {
@@ -11,5 +16,13 @@
 
 .main-logo h3 {
     align-self: center;
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    color: #5f6368;
+    margin-left: 10px;
+}
+
+.ham:hover{
+    cursor: pointer;
+    width: 35px;
 }

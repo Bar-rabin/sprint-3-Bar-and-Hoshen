@@ -1,1 +1,5 @@
  /* note index */
+
+ *{
+    box-sizing: border-box;
+ }
