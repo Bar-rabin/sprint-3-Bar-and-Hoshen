@@ -144,7 +144,7 @@ function _createNotes() {
             _createNote('I like react'),
             _createNote('Hoshen and Bar are awsome'),
             _createNote('https://www.youtube.com/embed/4dPRGfGmCmU', 'video'),
-            _createNote('imgs/DSC_0833.JPG', 'image')
+            _createNote('imgs/image.JPG', 'image')
 
         ]
         storageService.saveToStorage(NOTE_KEY, notes)

@@ -3,7 +3,7 @@ const { useNavigate, useParams } = ReactRouterDOM
 export function NotePreview({ note }) {
     const navigate = useNavigate()
 
-
+console.log(note.info)
     const { info, type } = note
     return (
         <article className="Note-preview"  >
