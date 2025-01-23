@@ -1,16 +1,26 @@
 header {
     background: lightcyan;
     border-bottom: 2px solid white;
+    
 }
 
 .app-header {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
+    font-family: Roboto, sans-serif;
+    font-weight: light;
+    align-items: center;
+    background-color: #9e9e9e59;
+    
 }
 
+nav {
+    margin-right: 20px;
+}
 nav a {
     margin: .5em;
+
 }
 
 nav a:active {
@@ -18,7 +28,12 @@ nav a:active {
 }
 
 nav a.active {
-    color: darkblue;
+    color:teal;
     font-weight: bold;
     text-decoration: overline;
+}
+
+.app-header .app-logo {
+    font-size: x-large;
+    margin-left: 20px;
 }

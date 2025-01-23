@@ -23,8 +23,8 @@ export function MailPreview({ mail, onRemoveMail }) {
                 <h2>{mail.subject}</h2>
                 <p>{mail.body}</p>
                 {/* <p>{mail.from}</p> */}
+                <div onClick={() => onRemoveMail(mail.id)}>{<img className='icon' src='/icons/asset 30.png' />}</div>
             </div>
-            <div onClick={() => onRemoveMail(mail.id)}>{<img className='icon' src='/icons/asset 30.png' />}</div>
 
         </article>
     )

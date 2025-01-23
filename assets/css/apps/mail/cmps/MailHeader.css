@@ -1,5 +1,7 @@
 .mail-header .logo {
-    width: 80%;
+    width: 109px;
+    height: 40px;
+    margin-left: 10px;
     
 }
 
@@ -21,7 +23,7 @@
  
 .mail-header .hamburger {
     align-self: center;
-    margin-left: 7px;
+    margin-left: 10px;
 }
 .mail-header .compose-btn {
     
