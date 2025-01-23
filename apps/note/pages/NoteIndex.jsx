@@ -1,6 +1,7 @@
 import { NoteList } from "../cmps/NoteList.jsx"
 import { noteService } from "../services/note.service.js"
 import { NoteHeader } from "../cmps/NotesHeader.jsx"
+import { NoteNavBar } from "../cmps/NoteNavBar.jsx"
 const { useState, useEffect } = React
 
 export function NoteIndex() {
@@ -30,9 +31,10 @@ export function NoteIndex() {
     //     setFilterBy(prevFilter => ({ ...prevFilter, ...newFilter }))
     // }
 
-    return <div>
-        <NoteHeader />
-        <NoteList notes={notes} onRemoveNote={onRemoveNote}/>
+    return <div className="main-note-page">
+        <NoteHeader className="header" />
+        {/* <NoteNavBar className="nav" /> */}
+        <NoteList notes={notes} onRemoveNote={onRemoveNote} className="note"/>
 
     </div>
 }

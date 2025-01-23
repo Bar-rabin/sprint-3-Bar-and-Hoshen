@@ -3,3 +3,23 @@
  *{
     box-sizing: border-box;
  }
+
+ .main-note-page{
+   display: grid;
+   grid-template-areas: 
+   "header header header"
+   "nav notes notes"
+   "nav notes notes"
+   "nav notes notes";
+ }
+
+ .header{
+   grid-area: header;
+
+ }
+ .nav{
+   grid-area: nav;
+ }
+ .notes{
+   grid-area: notes;
+ }
