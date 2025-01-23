@@ -1,0 +1,13 @@
+@media (max-width: 640px) {
+    
+    .mail-preview{
+       
+        height: 60px;
+       
+        gap: 50px;
+        justify-content: space-between;   
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+}

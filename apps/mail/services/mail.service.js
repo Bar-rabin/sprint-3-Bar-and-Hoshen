@@ -23,11 +23,8 @@ function query(filterBy = {}) {
         .then(mails => {
             console.log(filterBy)
             console.log(mails)
-            if (filterBy.from) {
-
-
+            if (filterBy.from === 'momo@momo.com') {
                 mails = mails.filter(mail => mail.from === filterBy.from)
-
             }
 
             mails = mails.filter(mail => mail.to === 'momo@momo.com')
@@ -56,7 +53,7 @@ function save(mail) {
 function getEmptyMail(subject = '', body = '', isRead = false) {
     return {
         id: '',
-        createdAt: new Date(Date.now()),
+        createdAt: new Date(Date.now()).toLocaleDateString(),
         subject,
         body,
         isRead,
@@ -75,7 +72,7 @@ function getEmptyMailToSend(subject = '', body = '', isRead = false) {
         subject,
         body,
         isRead,
-        sentAt: null,
+        sentAt: new Date(Date.now()),
         removedAt: null,
         from: 'momo@momo.com',
         to: 'user@appsus.com'

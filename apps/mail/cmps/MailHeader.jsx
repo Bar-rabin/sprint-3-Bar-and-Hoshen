@@ -1,6 +1,6 @@
 const { useState, useEffect } = React
 
-export function MailHeader({ onToggleModal }) {
+export function MailHeader({ onToggleModal, filterMailsFromMomo }) {
     const [filterBy, setFilterBy] = useState(false)
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export function MailHeader({ onToggleModal }) {
                 <img src='/icons/asset 18.png' />Inbox</h4>
             <h4 className='icon-header' >
                 <img src='/icons/asset 19.png' />Starred</h4>
-            <h4 className='icon-header' onClick={handleChange} >
+            <h4 className='icon-header' onClick={filterMailsFromMomo} >
                 <img src='/icons/asset 21.png' />Sent</h4>
             <h4 className='icon-header' >
                 <img src='/icons/asset 22.png' />Draft</h4>

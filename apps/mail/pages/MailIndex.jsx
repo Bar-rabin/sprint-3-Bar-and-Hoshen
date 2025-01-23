@@ -16,17 +16,21 @@ export function MailIndex() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [isOpen, setIsOpen] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
+    // const [filteredMails, setFilteredMails] = useState([]);
 
 
-    console.log(filterBy)
+
     useEffect(() => {
         setSearchParams(utilService.getTruthyValues())
         loadMails()
-    }, [])
+    }, [filterBy])
 
     function loadMails() {
         mailService.query()
-            .then(setMails)
+            .then(mails => {
+                setMails(mails)
+                setFilteredMails(mails)
+            })
             .catch(err => {
                 console.log('Problems getting mails:', err)
             })
@@ -43,9 +47,14 @@ export function MailIndex() {
             })
     }
 
-    // function onSetFilter(filterBy) {
-    //     setFilterBy(filterBy)
-    // }
+    function onSetFilter(filterByToEdit) {
+        setFilterBy(prevFilter => ({ ...prevFilter, ...filterByToEdit }))
+    }
+
+    function filterMailsFromMomo() {
+        const filtered = mails.filter(mail => mail.from === 'momo@momo.com')
+        setFilteredMails(filtered)
+    }
 
     function onToggleModal() {
         setIsOpen(isOpen => !isOpen)
@@ -55,16 +64,17 @@ export function MailIndex() {
     return (
         <Fragment>
             <section className='mail-index'>
-                <MailHeader onToggleModal={onToggleModal} />
+                <MailHeader onToggleModal={onToggleModal} onSetFilter={onSetFilter} filterBy={filterBy} />
+
 
                 <MailList
                     mails={mails}
                     onRemoveMail={onRemoveMail}>
                 </MailList>
-                <MailInbox
+                {/* <MailInbox
                     mails={mails}
                     onRemoveMail={onRemoveMail}>
-                </MailInbox>
+                </MailInbox> */}
                 <MailCompose
                     isOpen={isOpen} onClose={() => setIsOpen(false)}>
 
