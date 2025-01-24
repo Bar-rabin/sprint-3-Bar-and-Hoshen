@@ -1,0 +1,23 @@
+.nav{
+    position: sticky;
+    left:0px;
+    top:70px;
+    width:100px;
+    height: 600px;
+    margin-top: 10px;
+}
+.note-icon{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    place-items: center;
+  
+}
+.note-icon:hover{
+    background-color:#e2e5e7 ;
+}
+.svgs{
+width:35px;
+margin-left: 11px;
+margin-top: 10px;
+}

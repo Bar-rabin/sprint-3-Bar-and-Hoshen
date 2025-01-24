@@ -13,13 +13,13 @@
    "nav notes notes";
  }
 
- .header{
+.notes-header{
    grid-area: header;
 
  }
- .nav{
+.nav{
    grid-area: nav;
  }
- .notes{
+.notes{
    grid-area: notes;
  }

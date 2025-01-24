@@ -3,6 +3,14 @@
     display: grid;
     grid-template-columns: 300px 1fr 300px;
     justify-content: space-between;
+    position: sticky;
+    top:0px;
+
+    background-color: white;
+    box-shadow: inset -1px 0 0 #dadce0,
+         inset 1px 0 0 #dadce0,
+         0 1px 2px 0 rgba(60, 64, 67, .3),
+         0 1px 3px 1px rgba(60, 64, 67, .15);
 }
 
 .notes-header .logo {
@@ -11,6 +19,7 @@
 }
 
 .ham {
+    
     width: 30px;
     align-self: center;
     margin: 15px;
@@ -43,6 +52,7 @@
     font-size: 1.2em;
     border:none;
     justify-self: center;
+    background-color: white;
 }
 .search-icon{
     width: 30px;

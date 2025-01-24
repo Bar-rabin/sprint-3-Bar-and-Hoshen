@@ -33,7 +33,7 @@ export function NoteIndex() {
 
     return <div className="main-note-page">
         <NoteHeader className="header" />
-        {/* <NoteNavBar className="nav" /> */}
+        <NoteNavBar />
         <NoteList notes={notes} onRemoveNote={onRemoveNote} className="note"/>
 
     </div>
