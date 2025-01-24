@@ -1,3 +1,5 @@
+import { LongTxt } from './LongText.jsx'
+
 const { useNavigate, useParams } = ReactRouterDOM
 const { useEffect, useState } = React
 
@@ -26,8 +28,11 @@ export function MailPreview({ mail, onRemoveMail, onToggelStar, starColor, handl
         <article className={'mail-preview flex align-center ' + getMailClass()}>
             <div className='mail align-center' onClick={onOpenMail}>
                 <p>{mail.from}</p>
-                <h2>{mail.subject}</h2>
-                <p>{mail.body}</p>
+                <p>{mail.subject}</p>
+                {/* <p>{mail.body}</p> */}
+                <LongTxt txt="">
+                    {mail.body}
+                </LongTxt>
             </div>
             <div className='icon' onClick={() => onRemoveMail(mail.id)}>
                 {<img src='/icons/asset 30.png' />}
