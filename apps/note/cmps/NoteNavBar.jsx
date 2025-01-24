@@ -6,19 +6,19 @@ export function NoteNavBar() {
         <section className="nav" >
 
             <div className="note-icon">
-                <img className="svgs" src='/icons/lightbolbicon.svg' />
+                <img className="svgs" src='icons/lightbolbicon.svg' />
             </div>
             <div className='note-icon' >
-                <img className="svgs" src='/icons/bellicon.svg' />
+                <img className="svgs" src='icons/bellicon.svg' />
             </div>
             <div className='note-icon'  >
-                <img className="svgs"src='/icons/pencilicon.svg' />
+                <img className="svgs"src='icons/pencilicon.svg' />
             </div>
             <div className='note-icon' >
-                <img className="svgs" src='/icons/arciveicon.svg' />
+                <img className="svgs" src='icons/arciveicon.svg' />
             </div>
             <div className='note-icon' >
-                <img className="svgs" src='/icons/binicon.svg' />
+                <img className="svgs" src='icons/binicon.svg' />
             </div>
 
 
