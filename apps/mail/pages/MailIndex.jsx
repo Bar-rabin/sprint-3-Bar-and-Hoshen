@@ -52,6 +52,7 @@ export function MailIndex() {
     function onSetFilter(filterByToEdit) {
         setFilterBy({ from: filterByToEdit })
 
+
     }
 
     function inboxCount() {
@@ -71,7 +72,6 @@ export function MailIndex() {
             )
     }
 
-    console.log(inboxCount())
 
     const handleMarkAsRead = (mailId) => {
         const updatedMails = mails.map(mail =>

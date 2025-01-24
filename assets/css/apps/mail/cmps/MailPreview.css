@@ -43,3 +43,16 @@
     opacity: 1;
     visibility: visible;
 }
+
+.date {
+    width: 100px;
+    opacity: 1;
+    visibility: visible;
+
+
+}
+
+.mail-preview:hover .date {
+    opacity: 0;
+    visibility: hidden;
+}

@@ -8,7 +8,6 @@ import { MailIndex } from "./apps/mail/pages/MailIndex.jsx"
 import { MailDetails } from "./apps/mail/pages/MailDetails.jsx"
 import { NoteIndex } from "./apps/note/pages/NoteIndex.jsx"
 import { NoteTxt } from "./apps/note/cmps/NoteTxt.jsx"
-import { MailInbox } from "./apps/mail/pages/MailInbox.jsx"
 
 
 
@@ -22,7 +21,6 @@ export function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/mail" element={<MailIndex />} >
-                    <Route path="/mail/inbox" element={<MailInbox />} />
                 </Route>
                 <Route path="/mail/:mailId" element={<MailDetails />} />
                 <Route path="/note" element={<NoteIndex />} />

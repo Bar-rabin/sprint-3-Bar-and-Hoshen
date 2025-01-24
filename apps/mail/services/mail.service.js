@@ -48,7 +48,7 @@ function save(mail) {
 function getEmptyMail(subject = '', body = '', isRead = false) {
     return {
         id: '',
-        createdAt: new Date(Date.now()).toLocaleDateString(),
+        createdAt: 'Dec 31',
         subject,
         body,
         isRead,

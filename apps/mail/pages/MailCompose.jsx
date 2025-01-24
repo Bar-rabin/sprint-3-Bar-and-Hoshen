@@ -40,7 +40,7 @@ export function MailCompose({ isOpen = false, onClose = () => { } }) {
         setMailToSend(prevMailToSend => ({ ...prevMailToSend, [field]: value }))
     }
 
-    let { from, to, subject } = mailToSend
+    let { from, to, subject, body } = mailToSend
 
     console.log(mailToSend)
 
@@ -57,6 +57,9 @@ export function MailCompose({ isOpen = false, onClose = () => { } }) {
 
                 <label htmlFor='subject'>Subject</label>
                 <input value={subject} onChange={handleChange} type="text" name='subject' id="subject"></input>
+
+                <label htmlFor='body'>Your Message</label>
+                <input value={body} onChange={handleChange} type="text" name='body' id="body"></input>
 
                 <button>Send</button>
                 <button className='close-btn' onClick={onClose}>X</button>

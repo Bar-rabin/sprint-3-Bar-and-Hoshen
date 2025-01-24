@@ -10,4 +10,11 @@
         0 1px 3px 1px rgba(60, 64, 67, .15);
     z-index: 3;
     background-color: white;
+    text-align: center;
+}
+
+.mail-compose form {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
 }

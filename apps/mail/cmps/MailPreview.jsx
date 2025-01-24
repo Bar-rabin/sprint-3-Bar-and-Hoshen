@@ -23,13 +23,13 @@ export function MailPreview({ mail, onRemoveMail, onToggelStar, starColor, handl
         navigate(`/mail/${mail.id}`)
 
     }
-    console.log('mail:', mail)
     return (
         <article className={'mail-preview flex align-center ' + getMailClass()}>
             <div className='mail align-center' onClick={onOpenMail}>
                 <p>{mail.from}</p>
-                <p>{mail.subject}</p>
-                {/* <p>{mail.body}</p> */}
+                <LongTxt txt="">
+                    {mail.subject}
+                </LongTxt>
                 <LongTxt txt="">
                     {mail.body}
                 </LongTxt>
@@ -41,7 +41,7 @@ export function MailPreview({ mail, onRemoveMail, onToggelStar, starColor, handl
                 {<img src='/icons/asset 19.png' />}
             </div>
 
-            <p>{mail.createdAt}</p>
+            <p className='date'>{mail.createdAt}</p>
 
         </article>
     )
