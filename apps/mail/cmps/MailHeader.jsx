@@ -1,11 +1,5 @@
-const { useState, useEffect } = React
 
-export function MailHeader({ onToggleModal, onSetFilter }) {
-
-    function handleChange({ target }) {
-
-
-    }
+export function MailHeader({ onToggleModal, onSetFilter, inboxCount }) {
 
 
     return (
@@ -17,7 +11,7 @@ export function MailHeader({ onToggleModal, onSetFilter }) {
             <button className='compose-btn' onClick={onToggleModal}>
                 <img className='icon-compose' src='/icons/asset 17.png' /> Compose</button>
             <h4 className='icon-header' onClick={() => onSetFilter('user@appsus.com')} >
-                <img src='/icons/asset 18.png' />Inbox</h4>
+                <img src='/icons/asset 18.png' />{'Inbox'}</h4>
             <h4 className='icon-header' >
                 <img src='/icons/asset 19.png' />Starred</h4>
             <h4 className='icon-header' onClick={() => onSetFilter('momo@momo.com')} >

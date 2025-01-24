@@ -110,6 +110,18 @@ function _createMails() {
             _createMail('You Want?', 'You want ice cream?'),
             _createMail('Love you!', 'Would love to catch up sometimes'),
             _createMail('Miss you!', 'I miss you', true),
+            _createMail('Hi!', 'Would love to catch up sometimes'),
+            _createMail('You Want?', 'You want ice cream?'),
+            _createMail('Love you!', 'Would love to catch up sometimes'),
+            _createMail('Miss you!', 'I miss you', true),
+            _createMail('Miss you!', 'Would love to catch up sometimes', true),
+            _createMail('Miss you!', 'Would love to catch up sometimes', true),
+            _createMail('Love you!', 'I love you so mach'),
+            _createMail('you!', 'Would love to catch up sometimes', true),
+            _createMail('Hi!', 'Would love to catch up sometimes'),
+            _createMail('You Want?', 'You want ice cream?'),
+            _createMail('Love you!', 'Would love to catch up sometimes'),
+            _createMail('Miss you!', 'I miss you', true),
 
 
         ]

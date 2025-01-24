@@ -1,21 +1,27 @@
 const { useNavigate, useParams } = ReactRouterDOM
+const { useEffect, useState } = React
 
-export function MailPreview({ mail, onRemoveMail, onToggelStar, starColor }) {
+
+export function MailPreview({ mail, onRemoveMail, onToggelStar, starColor, handleMarkAsRead }) {
 
     const navigate = useNavigate()
+    // const [currentMail, setCurrentMail] = useState(mail)
+
+
 
     function getMailClass() {
-        if (mail.isRead) {
-            return 'read'
-        } else return ''
-
+        return mail.isRead ? 'read' : ''
     }
 
     function onOpenMail(ev) {
         ev.preventDefault()
-        navigate(`/mail/${mail.id}`)
-    }
 
+        handleMarkAsRead(mail.id)
+
+        navigate(`/mail/${mail.id}`)
+
+    }
+    console.log('mail:', mail)
     return (
         <article className={'mail-preview flex align-center ' + getMailClass()}>
             <div className='mail align-center' onClick={onOpenMail}>

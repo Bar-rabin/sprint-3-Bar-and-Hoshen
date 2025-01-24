@@ -1,11 +1,18 @@
+.mail-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
 .mail-header .logo {
     width: 109px;
     height: 40px;
     margin-left: 10px;
-    
+
 }
 
 .mail-header .icon-header {
+    cursor: pointer;
     width: 20px;
     padding: 5px;
     display: flex;
@@ -15,18 +22,21 @@
     margin-left: 7px;
 }
 
-.mail-header .main-logo{
+.mail-header .main-logo {
     display: grid;
     grid-template-columns: 20px 1fr;
-   
+
 }
- 
+
 .mail-header .hamburger {
     align-self: center;
     margin-left: 10px;
+    cursor: pointer;
+
 }
+
 .mail-header .compose-btn {
-    
+    cursor: pointer;
     display: grid;
     grid-template-columns: 40px 1fr;
     align-items: center;
@@ -35,20 +45,20 @@
     border-radius: 10px;
     margin-left: 7px;
     background-color: #c2e7ff;
-    
-    
+
+
 }
 
 .mail-header .compose-btn:hover {
     box-shadow: inset -1px 0 0 #dadce0,
-    inset 1px 0 0 #dadce0,
-    0 1px 3px 0 rgba(60, 64, 67, .3),
-    0 1px 3px 1px rgba(60, 64, 67, .15);
+        inset 1px 0 0 #dadce0,
+        0 1px 3px 0 rgba(60, 64, 67, .3),
+        0 1px 3px 1px rgba(60, 64, 67, .15);
     z-index: 2;
 }
 
 .mail-header .icon-compose {
-    
+
     width: 20px;
     padding: 5px;
     display: flex;
@@ -56,4 +66,3 @@
     justify-content: space-around;
     gap: 5px;
 }
-

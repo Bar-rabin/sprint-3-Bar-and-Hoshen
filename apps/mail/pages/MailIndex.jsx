@@ -17,12 +17,15 @@ export function MailIndex() {
     const [isOpen, setIsOpen] = useState(false)
     const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
     const [starColor, setStarColor] = useState('white')
+    // const [inboxCount, setInboxCount] = useState(0)
 
 
     useEffect(() => {
         setSearchParams(utilService.getTruthyValues())
         loadMails()
     }, [filterBy, starColor])
+
+
 
     function loadMails() {
         mailService.query(filterBy)
@@ -51,11 +54,31 @@ export function MailIndex() {
 
     }
 
-    function filterMailsFromMomo() {
-        const filtered = mails.filter(mail => mail.from === 'momo@momo.com')
-        setFilteredMails(filtered)
+    function inboxCount() {
+        const mailsInbox = mailService.query(filterBy)
+            .then(mails => {
+
+                console.log(mails)
+                let count = 0
+                for (let i = 0; i < mails.length; i++) {
+                    let mail = mails[i]
+                    if (mail.isRead) count++
+                }
+                console.log(count)
+                return count
+            }
+
+            )
     }
 
+    console.log(inboxCount())
+
+    const handleMarkAsRead = (mailId) => {
+        const updatedMails = mails.map(mail =>
+            mail.id === mailId ? { ...mail, isRead: true } : mail
+        )
+        setMails(updatedMails)
+    }
     function onToggleModal() {
         setIsOpen(isOpen => !isOpen)
     }
@@ -69,14 +92,15 @@ export function MailIndex() {
     return (
         <Fragment>
             <section className='mail-index'>
-                <MailHeader onToggleModal={onToggleModal} onSetFilter={onSetFilter} filterBy={filterBy} />
+                <MailHeader onToggleModal={onToggleModal} onSetFilter={onSetFilter} filterBy={filterBy} inboxCount={inboxCount} />
 
 
                 <MailList
                     mails={mails}
                     onRemoveMail={onRemoveMail}
                     onToggelStar={onToggelStar}
-                    starColor={starColor}>
+                    starColor={starColor}
+                    handleMarkAsRead={handleMarkAsRead}>
                 </MailList>
                 {/* <MailInbox
                     mails={mails}
