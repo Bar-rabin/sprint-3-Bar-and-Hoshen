@@ -31,8 +31,10 @@
 .posd-button {
     position:sticky;
     left:90%;
-   
-    
+   width: 25px;
+   height: 25px;
+    background-color: white;
+    border: none;
 }
 
 .text-align-center {
