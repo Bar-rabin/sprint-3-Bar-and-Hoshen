@@ -20,6 +20,6 @@
 .nav{
    grid-area: nav;
  }
-.notes{
+.note-ul{
    grid-area: notes;
  }
