@@ -2,7 +2,7 @@
     position: sticky;
     left:0px;
     top:70px;
-    width:100px;
+    width:150px;
     height: 600px;
     margin-top: 10px;
 }
@@ -10,7 +10,7 @@
     width:50px;
     height:50px;
     border-radius: 50%;
-    place-items: center;
+    place-items: start center;
   
 }
 .note-icon:hover{
@@ -19,5 +19,5 @@
 .svgs{
 width:35px;
 margin-left: 11px;
-margin-top: 10px;
+margin-top: 5px;
 }

@@ -15,7 +15,7 @@
 
 .notes-header .logo {
     width: 50px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .ham {
@@ -63,7 +63,7 @@
 }
 
 .search-icon {
-    width: 30px;
+    max-width: 50px;
     transition: width, 300ms;
 }
 
