@@ -134,6 +134,7 @@ function _createNotes() {
             _createNote('https://www.youtube.com/embed/IC5PL0XImjw', 'video'),
             _createNote('Guitar practice routine: Learn new chords, play 3 songs, 30 mins daily.'),
             _createNote('Research on AI in healthcare'),
+            _createNote('imgs/flower.JPG', 'image'),
             _createNote('Recipes to try this month: Spaghetti Carbonara, Avocado Toast, Homemade Pizza.'),
             _createNote('Meeting with marketing team: Discuss social media strategy, email marketing campaigns.'),
             _createNote('Repaint the living room, install new lighting in the kitchen.'),
