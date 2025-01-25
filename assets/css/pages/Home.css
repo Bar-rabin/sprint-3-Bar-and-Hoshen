@@ -1,1 +1,25 @@
  /* home */
+ * {
+     box-sizing: border-box;
+ }
+
+ .home {
+     display: flex;
+     justify-content: center;
+ }
+
+ img {
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+ }
+
+ h1 {
+     z-index: 10;
+     position: fixed;
+     top: 200px;
+     font-family: Roboto, sans-serif;
+     font-weight: light;
+     font-size: 3em;
+     color: rgb(51, 50, 50);
+ }

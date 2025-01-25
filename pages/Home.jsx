@@ -1,6 +1,7 @@
 
 export function Home() {
     return <section className="home">
-        <h1>Welcome to home page!</h1>
+        <img src="imgs/appsus-home.jpg" alt="" />
+        <h1>Welcome to AppSus!</h1>
     </section>
 }
