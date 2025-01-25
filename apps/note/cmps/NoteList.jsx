@@ -34,7 +34,7 @@ export function NoteList({ notes, onRemoveNote }) {
             )
             }
             <div className="add-logo">
-                <img src="/icons/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" onClick={onAddNote}/>
+                <img src="icons/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" onClick={onAddNote}/>
             </div>
         </ul >
     )
