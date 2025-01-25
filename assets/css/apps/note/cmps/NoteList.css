@@ -4,7 +4,6 @@
      column-width: 200px;
      column-gap: 5px;
      max-width: 90%;
-     justify-self: center;
      justify-content: space-between;
 
 
@@ -37,6 +36,7 @@
 
  .add-logo {
      width: 70px;
+     height: 70px;
      background-color: #ffbc00;
      border-radius: 50%;
      position: fixed;
